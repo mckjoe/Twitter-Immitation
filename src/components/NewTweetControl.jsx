@@ -1,6 +1,7 @@
 import React from 'react'
 import TweetForm from './TweetForm'
 import TweetButton from './TweetButton'
+import PropTypes from 'prop-types'
 
 class NewTweetControl extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class NewTweetControl extends React.Component {
     let currentlyVisibleContent = null;
 
     if(this.state.formVisibleOnPage) {
-      currentlyVisibleContent = <TweetForm />
+      currentlyVisibleContent = <TweetForm onNewTweetCreation={this.props.onNewTweetCreation}/>
     } else {
       currentlyVisibleContent = <button onClick={this.handleClick}>Lemme Tweet (tweet-tweet*)</button>
     }
@@ -31,6 +32,10 @@ class NewTweetControl extends React.Component {
       </div>
     )
   }
+}
+
+NewTweetControl.propTypes = {
+  onNewTweetCreation: PropTypes.func
 }
 
 export default NewTweetControl

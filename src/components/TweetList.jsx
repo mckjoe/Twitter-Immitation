@@ -1,8 +1,23 @@
 import React from 'react'
+import Tweet from './Tweet'
+import PropTypes from 'prop-types'
 
-function TweetList() {
+function TweetList(props) {
   return(
-    <p>This is a list of some Tweets</p>
-  );
+    <div>
+      <hr />
+      {props.TweetList.map((tweet, index) =>
+      <Tweet img={tweet.img}
+      title={tweet.title}
+      tweetBody={tweet.tweetBody}
+      key={index} />
+    )}
+    </div>
+  )
 }
+
+TweetList.propTypes = {
+  TweetList: PropTypes.array
+}
+
 export default TweetList

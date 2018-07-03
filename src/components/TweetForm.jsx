@@ -1,14 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function TweetForm() {
+function TweetForm(props) {
   let _title = null;
   let _tweetBody = null;
 
 
   function handleNewTweetFormSubmission(event) {
     event.preventDefault()
-    console.log(_title.value)
-    console.log(_tweetBody.value)
+    props.onNewTweetCreation({title: _title.value, tweetBody: _tweetBody.value});
     _title.value = ''
     _tweetBody.value = ''
   }
@@ -33,4 +33,9 @@ function TweetForm() {
     </div>
   )
 }
+
+TweetForm.propTypes = {
+  onNewTweetCreation: PropTypes.func
+}
+
 export default TweetForm
