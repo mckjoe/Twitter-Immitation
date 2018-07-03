@@ -10,6 +10,7 @@ function TweetList(props) {
         <Tweet img={tweet.img}
           title={tweet.title}
           tweetBody={tweet.tweetBody}
+          timeOpen={tweet.timeOpen}
           key={tweet.id} />
       )}
     </div>

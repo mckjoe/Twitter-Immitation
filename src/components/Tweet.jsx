@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Moment from 'moment'
 
 function Tweet(props) {
   return(
@@ -9,6 +10,8 @@ function Tweet(props) {
             display: flex;
             align-items: center;
             margin: 25px 0 25px;
+            justify-content: center;
+            text-align: center;
           }
           img {
             width: 100px;
@@ -21,6 +24,7 @@ function Tweet(props) {
         <div>
           <h4>{props.title}</h4>
           <p>{props.tweetBody}</p>
+          <h6> {displayTimeOpen(props.timeOpen)}</h6>
         </div>
       </div>
       <hr />
@@ -28,10 +32,15 @@ function Tweet(props) {
   )
 }
 
+function displayTimeOpen(timeOpen) {
+  return timeOpen.from(new Moment(), true);
+}
+
 Tweet.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   tweetBody: PropTypes.string.isRequired,
+  timeOpen: PropTypes.instanceOf(Moment).isRequired
 }
 
 export default Tweet

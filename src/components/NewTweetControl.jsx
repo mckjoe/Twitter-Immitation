@@ -2,6 +2,7 @@ import React from 'react'
 import TweetForm from './TweetForm'
 import PropTypes from 'prop-types'
 
+
 class NewTweetControl extends React.Component {
   constructor(props) {
     super(props)
@@ -14,8 +15,8 @@ class NewTweetControl extends React.Component {
   handleClick() {
     this.setState({formVisibleOnPage: true})
   }
-
   render(){
+
     let currentlyVisibleContent = null
 
     if(this.state.formVisibleOnPage) {
@@ -26,7 +27,13 @@ class NewTweetControl extends React.Component {
 
     return (
       <div>
-        {currentlyVisibleContent}
+        <style jsx>{`
+          background-color: skyblue;
+          text-align: center;
+        `}</style>
+        <div className="centered">
+          {currentlyVisibleContent}
+        </div>
       </div>
     )
   }

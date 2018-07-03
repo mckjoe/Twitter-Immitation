@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import profpic3 from '../assets/images/profpic3.jpeg'
+import Moment from 'moment'
 
 function TweetForm(props) {
   let _title = null
@@ -10,7 +11,7 @@ function TweetForm(props) {
 
   function handleNewTweetFormSubmission(event) {
     event.preventDefault()
-    props.onNewTweetCreation({img: profpic3, title: _title.value, tweetBody: _tweetBody.value, id: v4()})
+    props.onNewTweetCreation({img: profpic3, title: _title.value, tweetBody: _tweetBody.value, id: v4(), timeOpen: new Moment()})
     _title.value = ''
     _tweetBody.value = ''
   }
