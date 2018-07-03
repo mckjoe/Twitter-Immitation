@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 
 function Tweet(props) {
   return(
@@ -27,4 +27,11 @@ function Tweet(props) {
     </div>
   )
 }
+
+Tweet.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  tweetBody: PropTypes.string.isRequired,
+}
+
 export default Tweet

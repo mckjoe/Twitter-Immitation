@@ -7,11 +7,11 @@ function TweetList(props) {
     <div>
       <hr />
       {props.TweetList.map((tweet) =>
-      <Tweet img={tweet.img}
-      title={tweet.title}
-      tweetBody={tweet.tweetBody}
-      key={tweet.id} />
-    )}
+        <Tweet img={tweet.img}
+          title={tweet.title}
+          tweetBody={tweet.tweetBody}
+          key={tweet.id} />
+      )}
     </div>
   )
 }

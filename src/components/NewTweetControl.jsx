@@ -1,6 +1,5 @@
 import React from 'react'
 import TweetForm from './TweetForm'
-import TweetButton from './TweetButton'
 import PropTypes from 'prop-types'
 
 class NewTweetControl extends React.Component {
@@ -14,11 +13,10 @@ class NewTweetControl extends React.Component {
 
   handleClick() {
     this.setState({formVisibleOnPage: true})
-    console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage)
   }
 
   render(){
-    let currentlyVisibleContent = null;
+    let currentlyVisibleContent = null
 
     if(this.state.formVisibleOnPage) {
       currentlyVisibleContent = <TweetForm onNewTweetCreation={this.props.onNewTweetCreation}/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Moment from 'moment'
+{/*import Moment from 'moment'*/}
 import NewTweetControl from './NewTweetControl'
 import TweetList from './TweetList'
 import profpic1 from '../assets/images/profpic1.jpeg'
@@ -8,22 +8,22 @@ import profpic2 from '../assets/images/profpic2.jpeg'
 class App extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       masterTweetList: [
         {
           img:  profpic1,
-          title: "Who tweets anyways?",
-          tweetBody: "more people tweet than you think",
+          title: 'Who tweets anyways?',
+          tweetBody: 'more people tweet than you think',
         },
         {
           img: profpic2,
-          title: "Why you tweetin'?",
-          tweetBody: "I tweet because it\'s fulfilling",
+          title: 'Why you tweetin\'?',
+          tweetBody: 'I tweet because it\'s fulfilling',
         },
       ]
     }
-    this.handleAddingNewTweetToList = this.handleAddingNewTweetToList.bind(this);
+    this.handleAddingNewTweetToList = this.handleAddingNewTweetToList.bind(this)
   }
 
   handleAddingNewTweetToList(newTweet) {
