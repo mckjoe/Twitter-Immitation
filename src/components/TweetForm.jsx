@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { v4 } from 'uuid'
 
 function TweetForm(props) {
   let _title = null;
@@ -8,7 +9,7 @@ function TweetForm(props) {
 
   function handleNewTweetFormSubmission(event) {
     event.preventDefault()
-    props.onNewTweetCreation({title: _title.value, tweetBody: _tweetBody.value});
+    props.onNewTweetCreation({title: _title.value, tweetBody: _tweetBody.value, id: v4()});
     _title.value = ''
     _tweetBody.value = ''
   }

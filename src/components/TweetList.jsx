@@ -6,11 +6,11 @@ function TweetList(props) {
   return(
     <div>
       <hr />
-      {props.TweetList.map((tweet, index) =>
+      {props.TweetList.map((tweet) =>
       <Tweet img={tweet.img}
       title={tweet.title}
       tweetBody={tweet.tweetBody}
-      key={index} />
+      key={tweet.id} />
     )}
     </div>
   )
